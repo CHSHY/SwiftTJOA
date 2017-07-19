@@ -1,0 +1,23 @@
+//
+//  PrefixHeader.pch
+//  CHTJOA
+//
+//  Created by chenchuang on 17/7/18.
+//  Copyright © 2017年 app. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define Screen_Bounds [UIScreen mainScreen].bounds
+#define Screen_Height [UIScreen mainScreen].bounds.size.height
+#define Screen_Width [UIScreen mainScreen].bounds.size.width
+
+#define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+// 弱引用
+#define TJOAWeakSelf(type)  __weak typeof(type) weak##type = type;
+#define TJOAStrongSelf(type)  __strong typeof(type) type = weak##type;
+
+#endif /* PrefixHeader_pch */

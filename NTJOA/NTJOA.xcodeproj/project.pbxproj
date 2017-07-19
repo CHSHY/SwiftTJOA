@@ -14,6 +14,9 @@
 		92E2FF0A1F1F2DB5004EBA0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E2FF081F1F2DB5004EBA0D /* LaunchScreen.storyboard */; };
 		92E2FF151F1F2DB5004EBA0D /* NTJOATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2FF141F1F2DB5004EBA0D /* NTJOATests.swift */; };
 		92E2FF201F1F2DB5004EBA0D /* NTJOAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2FF1F1F1F2DB5004EBA0D /* NTJOAUITests.swift */; };
+		92E2FF371F1F3060004EBA0D /* TJHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2FF311F1F3060004EBA0D /* TJHomeController.swift */; };
+		92E2FF381F1F3060004EBA0D /* TJNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2FF341F1F3060004EBA0D /* TJNavController.swift */; };
+		92E2FF391F1F3060004EBA0D /* TJTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2FF361F1F3060004EBA0D /* TJTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,11 @@
 		92E2FF1B1F1F2DB5004EBA0D /* NTJOAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NTJOAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E2FF1F1F1F2DB5004EBA0D /* NTJOAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTJOAUITests.swift; sourceTree = "<group>"; };
 		92E2FF211F1F2DB5004EBA0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92E2FF311F1F3060004EBA0D /* TJHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJHomeController.swift; sourceTree = "<group>"; };
+		92E2FF331F1F3060004EBA0D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		92E2FF341F1F3060004EBA0D /* TJNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJNavController.swift; sourceTree = "<group>"; };
+		92E2FF351F1F3060004EBA0D /* TJOAApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJOAApi.h; sourceTree = "<group>"; };
+		92E2FF361F1F3060004EBA0D /* TJTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,11 @@
 				92E2FF031F1F2DB5004EBA0D /* Main.storyboard */,
 				92E2FF061F1F2DB5004EBA0D /* Assets.xcassets */,
 				92E2FF081F1F2DB5004EBA0D /* LaunchScreen.storyboard */,
+				92E2FF2E1F1F3060004EBA0D /* Utils */,
+				92E2FF321F1F3060004EBA0D /* Common */,
+				92E2FF2D1F1F3060004EBA0D /* View */,
+				92E2FF2F1F1F3060004EBA0D /* Model */,
+				92E2FF301F1F3060004EBA0D /* Controller */,
 				92E2FF0B1F1F2DB5004EBA0D /* Info.plist */,
 			);
 			path = NTJOA;
@@ -123,6 +136,46 @@
 				92E2FF211F1F2DB5004EBA0D /* Info.plist */,
 			);
 			path = NTJOAUITests;
+			sourceTree = "<group>";
+		};
+		92E2FF2D1F1F3060004EBA0D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92E2FF2E1F1F3060004EBA0D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		92E2FF2F1F1F3060004EBA0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		92E2FF301F1F3060004EBA0D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				92E2FF311F1F3060004EBA0D /* TJHomeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		92E2FF321F1F3060004EBA0D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				92E2FF331F1F3060004EBA0D /* PrefixHeader.pch */,
+				92E2FF351F1F3060004EBA0D /* TJOAApi.h */,
+				92E2FF361F1F3060004EBA0D /* TJTabBarController.swift */,
+				92E2FF341F1F3060004EBA0D /* TJNavController.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +315,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92E2FF371F1F3060004EBA0D /* TJHomeController.swift in Sources */,
 				92E2FF021F1F2DB5004EBA0D /* ViewController.swift in Sources */,
 				92E2FF001F1F2DB5004EBA0D /* AppDelegate.swift in Sources */,
+				92E2FF391F1F3060004EBA0D /* TJTabBarController.swift in Sources */,
+				92E2FF381F1F3060004EBA0D /* TJNavController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +570,7 @@
 				92E2FF261F1F2DB5004EBA0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92E2FF271F1F2DB5004EBA0D /* Build configuration list for PBXNativeTarget "NTJOATests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +579,7 @@
 				92E2FF291F1F2DB5004EBA0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92E2FF2A1F1F2DB5004EBA0D /* Build configuration list for PBXNativeTarget "NTJOAUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +588,7 @@
 				92E2FF2C1F1F2DB5004EBA0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
