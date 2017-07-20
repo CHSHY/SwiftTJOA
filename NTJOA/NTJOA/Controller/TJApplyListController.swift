@@ -42,6 +42,7 @@ class TJApplyListController: UITableViewController {
     
     func requestData() {
         
+        showMsg(currentView: self.view)
     }
     
     // MARK: Creat UI
@@ -50,10 +51,12 @@ class TJApplyListController: UITableViewController {
         self.title = "维护事务申请"
         self.tableView.tableFooterView = UIView.init()
         
+    
         self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
         self.addBtn.layer.borderWidth = 1.0
         self.addBtn.layer.borderColor = UIColor.init(colorLiteralRed: 1/255.0, green: 192/255.0,blue: 152/255.0, alpha: 1.0).cgColor
+        
         
         self.maintainBtn.layer.borderWidth = 1;
         self.maintainBtn.layer.borderColor = UIColor.init(colorLiteralRed: 1/255.0, green: 192/255.0,blue: 152/255.0, alpha: 1.0).cgColor

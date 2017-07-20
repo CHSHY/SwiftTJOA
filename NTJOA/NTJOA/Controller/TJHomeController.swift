@@ -18,6 +18,7 @@ class TJHomeController: UICollectionViewController {
         let dict:NSDictionary = [NSForegroundColorAttributeName: UIColor.white,NSFontAttributeName : UIFont.boldSystemFont(ofSize: 18)]
         //标题颜色
         self.navigationController?.navigationBar.titleTextAttributes = dict as? [String : AnyObject]
+        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
     }
 
