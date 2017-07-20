@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15E1DFFA84C748704344456B /* libPods-NTJOA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1DDE2152BB1669355093A8 /* libPods-NTJOA.a */; };
 		9245ABE11F1F5C1400BC3E28 /* TJApplyListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9245ABE01F1F5C1400BC3E28 /* TJApplyListController.swift */; };
 		92D9D9841F205D7E00488DEA /* TJApplyListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D9D9831F205D7E00488DEA /* TJApplyListCell.swift */; };
 		92E2FF001F1F2DB5004EBA0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2FEFF1F1F2DB5004EBA0D /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C1DDE2152BB1669355093A8 /* libPods-NTJOA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NTJOA.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9245ABE01F1F5C1400BC3E28 /* TJApplyListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJApplyListController.swift; sourceTree = "<group>"; };
 		92D9D9821F2046A700488DEA /* TJOA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TJOA-Bridging-Header.h"; sourceTree = "<group>"; };
 		92D9D9831F205D7E00488DEA /* TJApplyListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJApplyListCell.swift; sourceTree = "<group>"; };
@@ -62,6 +64,8 @@
 		92E2FF351F1F3060004EBA0D /* TJOAApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJOAApi.h; sourceTree = "<group>"; };
 		92E2FF361F1F3060004EBA0D /* TJTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJTabBarController.swift; sourceTree = "<group>"; };
 		92E2FF3A1F1F3D05004EBA0D /* TJHomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJHomeCell.swift; sourceTree = "<group>"; };
+		B1249F2C4B827ACBCD4710B0 /* Pods-NTJOA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTJOA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTJOA/Pods-NTJOA.debug.xcconfig"; sourceTree = "<group>"; };
+		E0854318812CC5B86D372C21 /* Pods-NTJOA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTJOA.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTJOA/Pods-NTJOA.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15E1DFFA84C748704344456B /* libPods-NTJOA.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8950E5E98B0F954E43AA0082 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C1DDE2152BB1669355093A8 /* libPods-NTJOA.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		92E2FEF31F1F2DB5004EBA0D = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +109,8 @@
 				92E2FF131F1F2DB5004EBA0D /* NTJOATests */,
 				92E2FF1E1F1F2DB5004EBA0D /* NTJOAUITests */,
 				92E2FEFD1F1F2DB5004EBA0D /* Products */,
+				CB10E47858F986A404E5192A /* Pods */,
+				8950E5E98B0F954E43AA0082 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,6 +204,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		CB10E47858F986A404E5192A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1249F2C4B827ACBCD4710B0 /* Pods-NTJOA.debug.xcconfig */,
+				E0854318812CC5B86D372C21 /* Pods-NTJOA.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92E2FF241F1F2DB5004EBA0D /* Build configuration list for PBXNativeTarget "NTJOA" */;
 			buildPhases = (
+				A24812686663BABE0B052A63 /* [CP] Check Pods Manifest.lock */,
 				92E2FEF81F1F2DB5004EBA0D /* Sources */,
 				92E2FEF91F1F2DB5004EBA0D /* Frameworks */,
 				92E2FEFA1F1F2DB5004EBA0D /* Resources */,
+				170DFC96CBE572C8F5C74F10 /* [CP] Embed Pods Frameworks */,
+				E75A5CE0F97B6B7E6E2B539E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -320,6 +347,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		170DFC96CBE572C8F5C74F10 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NTJOA/Pods-NTJOA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A24812686663BABE0B052A63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E75A5CE0F97B6B7E6E2B539E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NTJOA/Pods-NTJOA-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		92E2FEF81F1F2DB5004EBA0D /* Sources */ = {
@@ -483,6 +558,7 @@
 		};
 		92E2FF251F1F2DB5004EBA0D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1249F2C4B827ACBCD4710B0 /* Pods-NTJOA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UV4897BN9Z;
@@ -499,6 +575,7 @@
 		};
 		92E2FF261F1F2DB5004EBA0D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0854318812CC5B86D372C21 /* Pods-NTJOA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UV4897BN9Z;
