@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9245ABE11F1F5C1400BC3E28 /* TJApplyListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9245ABE01F1F5C1400BC3E28 /* TJApplyListController.swift */; };
+		92D9D9841F205D7E00488DEA /* TJApplyListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D9D9831F205D7E00488DEA /* TJApplyListCell.swift */; };
 		92E2FF001F1F2DB5004EBA0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2FEFF1F1F2DB5004EBA0D /* AppDelegate.swift */; };
 		92E2FF021F1F2DB5004EBA0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2FF011F1F2DB5004EBA0D /* ViewController.swift */; };
 		92E2FF051F1F2DB5004EBA0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E2FF031F1F2DB5004EBA0D /* Main.storyboard */; };
@@ -40,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		9245ABE01F1F5C1400BC3E28 /* TJApplyListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJApplyListController.swift; sourceTree = "<group>"; };
+		92D9D9821F2046A700488DEA /* TJOA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TJOA-Bridging-Header.h"; sourceTree = "<group>"; };
+		92D9D9831F205D7E00488DEA /* TJApplyListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJApplyListCell.swift; sourceTree = "<group>"; };
 		92E2FEFC1F1F2DB5004EBA0D /* NTJOA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTJOA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E2FEFF1F1F2DB5004EBA0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92E2FF011F1F2DB5004EBA0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				92E2FF3A1F1F3D05004EBA0D /* TJHomeCell.swift */,
+				92D9D9831F205D7E00488DEA /* TJApplyListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +180,7 @@
 		92E2FF321F1F3060004EBA0D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				92D9D9821F2046A700488DEA /* TJOA-Bridging-Header.h */,
 				92E2FF331F1F3060004EBA0D /* PrefixHeader.pch */,
 				92E2FF351F1F3060004EBA0D /* TJOAApi.h */,
 				92E2FF361F1F3060004EBA0D /* TJTabBarController.swift */,
@@ -321,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D9D9841F205D7E00488DEA /* TJApplyListCell.swift in Sources */,
 				92E2FF371F1F3060004EBA0D /* TJHomeController.swift in Sources */,
 				9245ABE11F1F5C1400BC3E28 /* TJApplyListController.swift in Sources */,
 				92E2FF021F1F2DB5004EBA0D /* ViewController.swift in Sources */,

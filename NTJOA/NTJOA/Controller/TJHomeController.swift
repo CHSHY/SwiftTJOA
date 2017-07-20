@@ -15,8 +15,17 @@ class TJHomeController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "首页"
+        let dict:NSDictionary = [NSForegroundColorAttributeName: UIColor.white,NSFontAttributeName : UIFont.boldSystemFont(ofSize: 18)]
+        //标题颜色
+        self.navigationController?.navigationBar.titleTextAttributes = dict as? [String : AnyObject]
+        
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

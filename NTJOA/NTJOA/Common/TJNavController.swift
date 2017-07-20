@@ -14,8 +14,6 @@ class TJNavController: UINavigationController {
         super.viewDidLoad()
         
         self.navigationBar.setBackgroundImage(UIImage(named: "top_background"), for:UIBarMetrics.default)
-        
-        self.navigationBar.barTintColor = UIColor.white
         self.navigationBar.tintColor = UIColor.white
     }
 
