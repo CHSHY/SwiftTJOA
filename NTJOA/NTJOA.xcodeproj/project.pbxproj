@@ -23,6 +23,7 @@
 		92E2FF381F1F3060004EBA0D /* TJNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2FF341F1F3060004EBA0D /* TJNavController.swift */; };
 		92E2FF391F1F3060004EBA0D /* TJTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2FF361F1F3060004EBA0D /* TJTabBarController.swift */; };
 		92E2FF3B1F1F3D05004EBA0D /* TJHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2FF3A1F1F3D05004EBA0D /* TJHomeCell.swift */; };
+		92E69C161F26DF7200107873 /* TJApplyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E69C151F26DF7200107873 /* TJApplyListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		92E2FF341F1F3060004EBA0D /* TJNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJNavController.swift; sourceTree = "<group>"; };
 		92E2FF361F1F3060004EBA0D /* TJTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJTabBarController.swift; sourceTree = "<group>"; };
 		92E2FF3A1F1F3D05004EBA0D /* TJHomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJHomeCell.swift; sourceTree = "<group>"; };
+		92E69C151F26DF7200107873 /* TJApplyListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJApplyListModel.swift; sourceTree = "<group>"; };
 		B1249F2C4B827ACBCD4710B0 /* Pods-NTJOA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTJOA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTJOA/Pods-NTJOA.debug.xcconfig"; sourceTree = "<group>"; };
 		E0854318812CC5B86D372C21 /* Pods-NTJOA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTJOA.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTJOA/Pods-NTJOA.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +183,7 @@
 		92E2FF2F1F1F3060004EBA0D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				92E69C151F26DF7200107873 /* TJApplyListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				92E2FF371F1F3060004EBA0D /* TJHomeController.swift in Sources */,
 				9245ABE11F1F5C1400BC3E28 /* TJApplyListController.swift in Sources */,
 				92E2FF021F1F2DB5004EBA0D /* ViewController.swift in Sources */,
+				92E69C161F26DF7200107873 /* TJApplyListModel.swift in Sources */,
 				92E2FF001F1F2DB5004EBA0D /* AppDelegate.swift in Sources */,
 				92E2FF391F1F3060004EBA0D /* TJTabBarController.swift in Sources */,
 				92E2FF3B1F1F3D05004EBA0D /* TJHomeCell.swift in Sources */,

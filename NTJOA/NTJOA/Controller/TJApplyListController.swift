@@ -18,31 +18,91 @@ class TJApplyListController: UITableViewController {
     @IBOutlet weak var queryBtn: UIButton!
     
     var dataArray = NSMutableArray()
+    var pageNumber = NSInteger()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initData()
-        requestData()
         creatView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.tabBarController?.tabBar.isHidden = true
+        self.tableView.mj_header .beginRefreshing()
     }
     
      // MARK: InitData
     
     func initData() {
-      
+        
+        let header = MJRefreshNormalHeader()
+        let footer = MJRefreshAutoNormalFooter()
+        header.setRefreshingTarget(self, refreshingAction: #selector(TJApplyListController.headerRefreshAction))
+        self.tableView.mj_header = header
+        footer.setRefreshingTarget(self, refreshingAction: #selector(TJApplyListController.footRefreshAction))
+        self.tableView.mj_footer = footer
+    }
+    
+    //下拉加载
+    func headerRefreshAction() {
+        
+        self.pageNumber = 1
+        self.dataArray .removeAllObjects()
+        self.requestData()
+        
+    }
+    //上拉加载更多
+    func footRefreshAction() {
+        
+        self.pageNumber+=1
+        self.requestData()
     }
     
     // MARK: RequestData
     
     func requestData() {
         
-        showMsg(currentView: self.view)
+        TJHTTPRequestManger.sharedInstance().Request(methodType: RequestType(rawValue: 1)!,
+                                                     urlString: Get_ARRAIR_APPLY_LIST,
+                                                     parameters: getParameters(),
+                                                     success: { (data) in
+                                                        
+                                                        self.tableView.mj_header .endRefreshing()
+                                                        self.tableView.mj_footer.endRefreshing()
+                                                        
+                                                        var array = NSArray()
+                                                        array = data["dataList"] as! NSArray
+                                                        
+                                                        if array.count > 0{
+                                                            let modelArray = TJApplyListModel.mj_objectArray(withKeyValuesArray: array)
+                                                            
+                                                            for subModel in modelArray!{
+                                                                self.dataArray .addObjects(from: [subModel])
+                                                            }
+                                                        }
+                                                        
+                                                        if array.count == 0{
+                                                            
+                                                            if self.pageNumber == 1{
+                                                                msg(currentView: self.view,prompt:"还没有数据哦!")
+                                                            }
+                                                            else{
+                                                                
+                                                                msg(currentView: self.view,prompt:"没有更多数据哦!")
+                                                            }
+                                                        }
+                                                        self.tableView.reloadData()
+                                 
+                                                        
+        }) { (error) in
+            
+            self.tableView.mj_header .endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
+            msg(currentView: self.view,prompt:"请求失败哦~")
+            return
+        }
     }
     
     // MARK: Creat UI
@@ -57,7 +117,7 @@ class TJApplyListController: UITableViewController {
         self.addBtn.layer.borderWidth = 1.0
         self.addBtn.layer.borderColor = UIColor.init(colorLiteralRed: 1/255.0, green: 192/255.0,blue: 152/255.0, alpha: 1.0).cgColor
         
-        
+        self.maintainBtn.backgroundColor = rgbColor(redFlot: 1, greenFloat: 192, blueFloat: 152)
         self.maintainBtn.layer.borderWidth = 1;
         self.maintainBtn.layer.borderColor = UIColor.init(colorLiteralRed: 1/255.0, green: 192/255.0,blue: 152/255.0, alpha: 1.0).cgColor
         self.maintainBtn.backgroundColor = UIColor.init(colorLiteralRed: 1.0/255.0, green: 192/255.0,blue: 152/255.0, alpha: 1.0)
@@ -77,50 +137,36 @@ class TJApplyListController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        return self.dataArray.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as?TJApplyListCell
 
-        cell?.titleLabel.text = "测试数据"
+        let listModel = self.dataArray[indexPath.row] as! TJApplyListModel
+        
+        cell?.titleLabel.text = listModel.title
+        cell?.dataLabel.text = listModel.appDate
+        
+        
+        if self.title == "查询事务申请"
+        {
+            cell?.statuLabel.text = listModel.auditStateName
+            if listModel.auditStateName == "审批中" {
+                cell?.statuLabel.textColor = rgbColor(redFlot: 204, greenFloat: 204, blueFloat: 204)
+            
+            }else if listModel.auditStateName == "审批通过"
+            {
+                cell?.statuLabel.textColor = rgbColor(redFlot: 26, greenFloat: 188, blueFloat:156)
+            }
+            else if listModel.auditStateName == "审批未通过"
+            {
+                 cell?.statuLabel.textColor = rgbColor(redFlot: 242, greenFloat: 147, blueFloat: 147)
+            }
+        }
 
         return cell!
-    }
-    
-
-    
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-
-    
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    
-
-    
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    
-
-    
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
     }
     
 
@@ -139,6 +185,7 @@ class TJApplyListController: UITableViewController {
         
         self.title = "维护事务申请"
         self.navigationItem.rightBarButtonItem = nil
+        self.tableView.mj_header .beginRefreshing()
     }
     
    
@@ -152,6 +199,22 @@ class TJApplyListController: UITableViewController {
         
         self.title = "查询事务申请"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "筛选", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        self.tableView.mj_header .beginRefreshing()
     }
     
+    func getParameters() ->NSMutableDictionary {
+        let parameters  = NSMutableDictionary()
+        
+        if self.title == "维护事务申请" {
+            parameters .setObject("0", forKey: "auditStates" as NSCopying)
+            
+        }else{
+        
+           parameters .setObject("1", forKey: "auditStates" as NSCopying)
+        }
+         parameters .setObject(self.pageNumber, forKey: "pageNum" as NSCopying)
+         parameters .setObject(20, forKey: "pageSize" as NSCopying)
+        return parameters
+        
+    }
 }

@@ -15,6 +15,7 @@ class TJNavController: UINavigationController {
         
         self.navigationBar.setBackgroundImage(UIImage(named: "top_background"), for:UIBarMetrics.default)
         self.navigationBar.tintColor = UIColor.white
+        self.navigationBar.isTranslucent = false
     }
 
     override func didReceiveMemoryWarning() {

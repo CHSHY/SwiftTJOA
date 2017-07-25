@@ -19,7 +19,7 @@ class TJHomeController: UICollectionViewController {
         //标题颜色
         self.navigationController?.navigationBar.titleTextAttributes = dict as? [String : AnyObject]
         self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-        
+        requestData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +32,36 @@ class TJHomeController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: RequestData
     
+    func requestData() {
+        
+        let parameters  = NSMutableDictionary()
+    
+        parameters .setObject("99999", forKey: "userNo" as NSCopying)
+        parameters .setObject("Tyc120613", forKey: "password" as NSCopying)
+        parameters .setObject("0", forKey: "phoneType" as NSCopying)
+        parameters .setObject("cc71605a663575cb55ca62dd9dda027c", forKey: "cId" as NSCopying)
+        parameters .setObject("1f390c2bf552bb9db1715f8472aa57584d88e81ed60c0f9700e04ea6a67fb07e", forKey: "deviceToken" as NSCopying)
+        parameters .setObject("666666", forKey: "validateCode" as NSCopying)
+
+        
+        TJHTTPRequestManger.sharedInstance().Request(methodType: RequestType(rawValue: 1)!,
+                                                     urlString:  LOGIN,
+                                                     parameters: parameters,
+                                                     success: { (data) in
+                                                        
+                                
+                                                       msg(currentView: self.view,prompt:"登陆成功!")
+                                                        
+                                                        
+        }) { (error) in
+            
+           msg(currentView: self.view,prompt:"登陆失败!")
+            return
+        }
+    }
+
     //MARK:Creat UI
     func configureLayout() {
         //let layout = self.collectionViewLayout
