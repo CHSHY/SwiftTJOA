@@ -42,6 +42,7 @@ class TJApplyListController: UITableViewController {
         header.setRefreshingTarget(self, refreshingAction: #selector(TJApplyListController.headerRefreshAction))
         self.tableView.mj_header = header
         footer.setRefreshingTarget(self, refreshingAction: #selector(TJApplyListController.footRefreshAction))
+        
         self.tableView.mj_footer = footer
     }
     
@@ -147,7 +148,7 @@ class TJApplyListController: UITableViewController {
         let listModel = self.dataArray[indexPath.row] as! TJApplyListModel
         
         cell?.titleLabel.text = listModel.title
-        cell?.dataLabel.text = listModel.appDate
+        cell?.dataLabel.text = timeDateToString(dataSring: listModel.appDate)
         
         
         if self.title == "查询事务申请"
@@ -169,6 +170,14 @@ class TJApplyListController: UITableViewController {
         return cell!
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let main = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let applyVc = main.instantiateViewController(withIdentifier:"TJApplyInfoController")
+        self.navigationController?.pushViewController(applyVc, animated: true)
+        
+    }
+
 
     // MARK: PrviteMeth
     
@@ -217,4 +226,29 @@ class TJApplyListController: UITableViewController {
         return parameters
         
     }
+    
+   
+    func timeDateToString(dataSring :String) -> String {
+        var string = String()
+        
+        if dataSring.length != 10
+        {
+            let timeInterval = TimeInterval(dataSring.toDouble()!/1000)
+            let date = NSDate(timeIntervalSince1970: timeInterval)
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            string = formatter.string(from: date as Date)
+            
+            if string == "1970-01-01" {
+                return  ""
+            }
+        }
+        else
+        {
+            string = dataSring;
+        }
+        return string;
+
+    }
+    
 }

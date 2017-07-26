@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		15E1DFFA84C748704344456B /* libPods-NTJOA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1DDE2152BB1669355093A8 /* libPods-NTJOA.a */; };
+		921799081F2880E8000ED43D /* TJApplyInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921799071F2880E8000ED43D /* TJApplyInfoController.swift */; };
+		9217990D1F2889FB000ED43D /* TJEXTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9217990C1F2889FB000ED43D /* TJEXTableView.swift */; };
 		9245ABE11F1F5C1400BC3E28 /* TJApplyListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9245ABE01F1F5C1400BC3E28 /* TJApplyListController.swift */; };
 		9269F9A51F2093BA004CAD39 /* TJOAHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9269F9A41F2093BA004CAD39 /* TJOAHeader.swift */; };
 		92D9D9841F205D7E00488DEA /* TJApplyListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D9D9831F205D7E00488DEA /* TJApplyListCell.swift */; };
@@ -24,6 +26,8 @@
 		92E2FF391F1F3060004EBA0D /* TJTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2FF361F1F3060004EBA0D /* TJTabBarController.swift */; };
 		92E2FF3B1F1F3D05004EBA0D /* TJHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2FF3A1F1F3D05004EBA0D /* TJHomeCell.swift */; };
 		92E69C161F26DF7200107873 /* TJApplyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E69C151F26DF7200107873 /* TJApplyListModel.swift */; };
+		92E69C1A1F274BD900107873 /* ExDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E69C181F274BD900107873 /* ExDate.swift */; };
+		92E69C1B1F274BD900107873 /* ExString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E69C191F274BD900107873 /* ExString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		5C1DDE2152BB1669355093A8 /* libPods-NTJOA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NTJOA.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		921799071F2880E8000ED43D /* TJApplyInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJApplyInfoController.swift; sourceTree = "<group>"; };
+		9217990C1F2889FB000ED43D /* TJEXTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJEXTableView.swift; sourceTree = "<group>"; };
 		9245ABE01F1F5C1400BC3E28 /* TJApplyListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJApplyListController.swift; sourceTree = "<group>"; };
 		9269F9A01F209171004CAD39 /* NTJOA-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NTJOA-Bridging-Header.h"; sourceTree = "<group>"; };
 		9269F9A41F2093BA004CAD39 /* TJOAHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJOAHeader.swift; sourceTree = "<group>"; };
@@ -68,6 +74,8 @@
 		92E2FF361F1F3060004EBA0D /* TJTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJTabBarController.swift; sourceTree = "<group>"; };
 		92E2FF3A1F1F3D05004EBA0D /* TJHomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJHomeCell.swift; sourceTree = "<group>"; };
 		92E69C151F26DF7200107873 /* TJApplyListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJApplyListModel.swift; sourceTree = "<group>"; };
+		92E69C181F274BD900107873 /* ExDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExDate.swift; sourceTree = "<group>"; };
+		92E69C191F274BD900107873 /* ExString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
 		B1249F2C4B827ACBCD4710B0 /* Pods-NTJOA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTJOA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTJOA/Pods-NTJOA.debug.xcconfig"; sourceTree = "<group>"; };
 		E0854318812CC5B86D372C21 /* Pods-NTJOA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTJOA.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTJOA/Pods-NTJOA.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +184,9 @@
 		92E2FF2E1F1F3060004EBA0D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				92E69C181F274BD900107873 /* ExDate.swift */,
+				92E69C191F274BD900107873 /* ExString.swift */,
+				9217990C1F2889FB000ED43D /* TJEXTableView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -193,6 +204,7 @@
 			children = (
 				92E2FF311F1F3060004EBA0D /* TJHomeController.swift */,
 				9245ABE01F1F5C1400BC3E28 /* TJApplyListController.swift */,
+				921799071F2880E8000ED43D /* TJApplyInfoController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -407,12 +419,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921799081F2880E8000ED43D /* TJApplyInfoController.swift in Sources */,
 				92D9D9841F205D7E00488DEA /* TJApplyListCell.swift in Sources */,
 				92E2FF371F1F3060004EBA0D /* TJHomeController.swift in Sources */,
 				9245ABE11F1F5C1400BC3E28 /* TJApplyListController.swift in Sources */,
 				92E2FF021F1F2DB5004EBA0D /* ViewController.swift in Sources */,
 				92E69C161F26DF7200107873 /* TJApplyListModel.swift in Sources */,
 				92E2FF001F1F2DB5004EBA0D /* AppDelegate.swift in Sources */,
+				92E69C1B1F274BD900107873 /* ExString.swift in Sources */,
+				9217990D1F2889FB000ED43D /* TJEXTableView.swift in Sources */,
+				92E69C1A1F274BD900107873 /* ExDate.swift in Sources */,
 				92E2FF391F1F3060004EBA0D /* TJTabBarController.swift in Sources */,
 				92E2FF3B1F1F3D05004EBA0D /* TJHomeCell.swift in Sources */,
 				9269F9A51F2093BA004CAD39 /* TJOAHeader.swift in Sources */,
