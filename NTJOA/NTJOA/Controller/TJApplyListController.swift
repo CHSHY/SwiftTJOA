@@ -173,9 +173,18 @@ class TJApplyListController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let main = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let applyVc = main.instantiateViewController(withIdentifier:"TJApplyInfoController")
-        self.navigationController?.pushViewController(applyVc, animated: true)
+        let applyVc = main.instantiateViewController(withIdentifier:"TJApplyInfoController")as!TJApplyInfoController
         
+        if self.title == "维护事务申请" {
+             applyVc.statusStr = "维护事务详情"
+            
+        }else{
+            applyVc.statusStr = "查询事务详情"
+           
+        }
+       
+        
+        self.navigationController?.pushViewController(applyVc, animated: true)
     }
 
 
@@ -183,6 +192,14 @@ class TJApplyListController: UITableViewController {
     
    
     @IBAction func addBtnAction(_ sender: Any) {
+        
+        let main = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let applyVc = main.instantiateViewController(withIdentifier:"TJApplyInfoController")as!TJApplyInfoController
+        
+        applyVc.statusStr = "新增事务申请"
+    
+        self.navigationController?.pushViewController(applyVc, animated: true)
+
     }
     @IBAction func maintainBtnAction(_ sender: Any) {
         
